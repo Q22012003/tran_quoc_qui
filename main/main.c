@@ -2,24 +2,19 @@
 
 void main()
 {
-	float diem = 0;
-	printf("moi ban nhap: ");
-	scanf_s("%f", &diem);
-
-	if (diem > 8)
+	int password = 1234;
+	int nhap_pass = 0;
+	int i = 0;
+	int tien = 0;
+	printf("moi nhap pass:");
+	scanf_s("%d", &nhap_pass);
+	if (nhap_pass != password)
 	{
-		printf("gioi");
+			printf("moi ban nhap lai: ");
+			i++;
 	}
-	else if (diem >= 6.5 )
+	else if (nhap_pass == password)
 	{
-		printf("kha");
-	}
-	else if (diem >= 5.0)
-	{
-		printf("trung binh");
-	}
-	else
-	{
-		printf("yeu");
+		if(tien>=10000)
 	}
 }
