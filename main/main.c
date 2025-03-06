@@ -2,26 +2,24 @@
 
 void main()
 {
-	int a = 0;
-	int b = 0;
-	int c = 0;
+	float diem = 0;
+	printf("moi ban nhap: ");
+	scanf_s("%f", &diem);
 
-	printf("moi ban nhap so a: ");
-       	scanf_s("%d", &a);
-	printf("moi ban nhap so b: ");
-	    scanf_s("%d", &b);
-		printf("moi ban nhap so c: ");
-		scanf_s("%d", &c);
-	      
-		if (a > b && a > c)
-		{
-			printf("in ra so %d", a);
-		}
-		else if (b > a && b > c)
-		{
-			printf("in ra so %d", b);
-		}
-		else (c > a && c > b)
-			printf("in ra so %d", c);
-
+	if (diem > 8)
+	{
+		printf("gioi");
+	}
+	else if (diem >= 6.5 && diem < 8)
+	{
+		printf("kha");
+	}
+	else if (diem >= 5.0 && diem < 6.5)
+	{
+		printf("trung binh");
+	}
+	else
+	{
+		printf("yeu");
+	}
 }
