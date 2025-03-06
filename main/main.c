@@ -10,11 +10,11 @@ void main()
 	{
 		printf("gioi");
 	}
-	else if (diem >= 6.5 && diem < 8)
+	else if (diem >= 6.5 )
 	{
 		printf("kha");
 	}
-	else if (diem >= 5.0 && diem < 6.5)
+	else if (diem >= 5.0)
 	{
 		printf("trung binh");
 	}
