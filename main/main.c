@@ -1,18 +1,27 @@
 #include <stdio.h>
 #include <math.h>
 void main() {
-    int tong = 0;
+    int a = 0;
+    int h = 0;
     int i = 0;
-    int j = 0;
-    for ( i = 1; i<11 ; i++)
+    double tong = 0;
+
+    printf("moi ban nhap chieu dai a : ");
+    scanf_s("%d", &a);
+    printf("moi ban nhap chieu cao h :");
+    scanf_s("%d", &h);
+
+    for (i = 0; i <= 1000; i++)
     {
-        for (j = 1; j < 11; j++)
-        {
-            tong = i * j;
-            printf("%d x %d = %d\t", i, j, tong);
-        }
-        printf("\n");
+        double x1 = pow((a + i * h), 2);
+        double x2 = pow((a + (i + 1) * h), 2);
+        tong += ((x1 + x2) * h) / 2;
     }
-       
-    }
+    printf("gia tri la: %f", tong);
+}
+
+    
+
+
+
           
