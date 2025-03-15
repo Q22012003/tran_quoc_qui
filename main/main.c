@@ -1,23 +1,27 @@
 ﻿#include <stdio.h>
 #include <math.h>
-int main() {
-    int a, b;
+void main() {
+    int a = 0;
+    int h = 0;
+    int i = 0;
+    double tong = 0;
 
-    
-    printf("Nhap A: ");
-    scanf_s("%d", &a); 
-    printf("Nhap B: ");
-    scanf_s("%d", &b);
+    printf("moi ban nhap chieu dai a : ");
+    scanf_s("%d", &a);
+    printf("moi ban nhap chieu cao h :");
+    scanf_s("%d", &h);
 
-    // Dùng thuật toán Euclid để tìm ƯCLN bằng cách gán A cho B còn B gán phần dư sau đó đi chia nhau đến khi nào đích đến = 0
-    while (b != 0) {            
-        int temp = b;              
-        b = a % b;
-        a = temp;
+    for (i = 0; i <= 1000; i++)
+    {
+        double x1 = pow((a + i * h), 2);
+        double x2 = pow((a + (i + 1) * h), 2);
+        tong += ((x1 + x2) * h) / 2;
     }
-
-    // In kết quả
-    printf("Uuoc Chung lon nhat : % d\n", a);
-
-    return 0;
+    printf("gia tri la: %f", tong);
 }
+
+
+
+
+
+
