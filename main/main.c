@@ -1,25 +1,32 @@
-﻿#include <stdio.h>
-#include <math.h>
-
-void main() {
-    float principal, rate = 8.2, amount;
-    int years;
-
-    
-    printf("Nhập số tiền gửi ban đầu: ");
-    scanf_s("%lf", &principal);
-
-   
-    printf("Nhập số năm gửi: ");
-    scanf_s("%d", &years);
-
-    rate = rate / 100;
+﻿	#include <stdio.h>
+	#include <math.h>
 
 
-    amount = principal * pow(1 + rate, years);
+	void main()
+	{
+		int kiemtrasonguyento;
+		int n = 0;
+		int i, j;
 
-   
-    printf("Số tiền nhận được sau %d năm: %.2lf\n", years, amount);
+		printf("moi nhap so nguyen to: ");
+		scanf_s("%d", &n);
+		printf("cac so nguyen to nho hon n: %d\n", n);
 
-    
-}
+
+		for (i = 2; i < n; i++)
+		{
+			kiemtrasonguyento = 1;
+			for (j = 2; j <= sqrt(i); j++)
+			{
+				if (i % j == 0)
+				{
+					kiemtrasonguyento = 0;
+					break;
+				}
+			}
+			
+			if (kiemtrasonguyento)
+				printf("%d ", i);
+		}
+		
+	}
