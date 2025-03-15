@@ -1,32 +1,23 @@
-﻿	#include <stdio.h>
-	#include <math.h>
+﻿#include <stdio.h>
+#include <math.h>
+int main() {
+    int a, b;
 
+    
+    printf("Nhap A: ");
+    scanf_s("%d", &a); 
+    printf("Nhap B: ");
+    scanf_s("%d", &b);
 
-	void main()
-	{
-		int kiemtrasonguyento;
-		int n = 0;
-		int i, j;
+    // Dùng thuật toán Euclid để tìm ƯCLN bằng cách gán A cho B còn B gán phần dư sau đó đi chia nhau đến khi nào đích đến = 0
+    while (b != 0) {            
+        int temp = b;              
+        b = a % b;
+        a = temp;
+    }
 
-		printf("moi nhap so nguyen to: ");
-		scanf_s("%d", &n);
-		printf("cac so nguyen to nho hon n: %d\n", n);
+    // In kết quả
+    printf("Uuoc Chung lon nhat : % d\n", a);
 
-
-		for (i = 2; i < n; i++)
-		{
-			kiemtrasonguyento = 1;
-			for (j = 2; j <= sqrt(i); j++)
-			{
-				if (i % j == 0)
-				{
-					kiemtrasonguyento = 0;
-					break;
-				}
-			}
-			
-			if (kiemtrasonguyento)
-				printf("%d ", i);
-		}
-		
-	}
+    return 0;
+}
