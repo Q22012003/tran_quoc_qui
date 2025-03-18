@@ -2,43 +2,15 @@
 
 void main()
 {
-	int A[10];
-	int i = 0;
-	int max = 0;
-	int size = sizeof(A)/sizeof(A[0]);
-	int j = 0;
+	char str[100];
+    int size = sizeof(str) / sizeof(str[0]);
+    int count = 0;
 
-	for (i = 0; i < size; i++)
-	{
-		printf("\nnhap phan tu thu %d: ", i);
-		scanf_s("%d", &A[i]);
-	}
-	for (i = 0; i < size; i++)
-	{
-		printf("\t%d", A[i]);
-	
-	}
-	for (i = 0; i < size; i++)
-	{
-		int min_index = i;
-		for (j = i + 1; j < size; j++)
-		{
-			if (A[j] < A[min_index])
-			{
-				min_index = j;
-			}
-			int temp = A[i];
-			A[i] = A[min_index];
-			A[min_index] = temp;
+printf("nhap chuoi: ");
+gets(str);
 
-		}
-	}
-	printf("\n");
-	for (i = 0; i < size; i++)
-	{
-		printf("\t%d", A[i]);
-
-	}
-	
-
+while (str[count] != '\0') {
+    count++;
+}
+printf("so ky tu %d", count);
 }
