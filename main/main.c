@@ -1,37 +1,30 @@
-﻿#include <stdio.h>
+﻿#include<stdio.h>
 
-int main() {
-    int A[10];
-    int size = sizeof(A) / sizeof(A[0]);
-    int i, j;
+void main()
+{
+	int A[10];
+	int i = 0;
+	int max = 0;
+	int n = 0;
 
-    // Nhập mảng
-    for (i = 0; i < size; i++) {
-        printf("Nhap phan tu thu %d: ", i);
-        scanf_s("%d", &A[i]); // 
-    }
-
-    printf("Cac so nguyen to trong mang: ");
-
-    
-    for (i = 0; i < size; i++) {
-        int n = A[i];
-        int isPrime = 1; 
-
-        if (n < 2) {
-            isPrime = 0; 
-        }
-        else {
-            for (j = 2; j * j <= n; j++) {
-                if (n % j == 0) {
-                    isPrime = 0;
-                    break;
-                }
-            }
-        }
-
-        if (isPrime) printf("%d ", n);
-    }
-
-    return 0;
+	for (i = 0; i < 10; i++)
+	{
+		printf("nhap phan tu thu %d: ", i);
+		scanf_s("%d", &A[i]);
+	}
+	for (i = 0; i < 10; i++)
+	{
+		if (A[i] > max)
+		{
+			max = A[i];
+		}
+	}
+	for (i = 0; i < 10; i++)
+	{
+		if (A[i] == max)
+		{
+			printf("\n%d vi tri nay la max", i);
+			printf("\n %d la so lon nhat trong mang", A[i]);
+		}
+	}
 }
