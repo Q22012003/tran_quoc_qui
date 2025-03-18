@@ -1,23 +1,27 @@
-﻿#include<stdio.h>
+﻿#include <stdio.h>
 
-void main()
-{
-	char str[100];
-    int size = sizeof(str) / sizeof(str[0]);
-    int count = 0, i = 0;
+int main() {
+    char str[100000];
+    int inWord = 0;
 
-printf("nhap chuoi: ");
-gets(str);
+  
+    printf("Nhap chuoi: ");
+    gets(str);
 
-while (str[i] != '\0') {
-    if (str[i] >='a'&&str[i]<='z')
-    {
-        str[i] = str[i] - 32;
+   
+    for (int i = 0; str[i] != '\0'; i++) {
+        
+        if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\r' || str[i] == '\f' || str[i] == '\v') {
+            inWord = 0; 
+        }
+        else if (inWord == 0) { 
+            if (str[i] >= 'a' && str[i] <= 'z') { 
+                str[i] = str[i] - ('a' - 'A'); 
+            }
+            inWord = 1; 
+        }
     }
-    i++;
-}
-for (i = 0; i < size; i++)
-{
-    printf("%c", str[i]);
-}
+
+    printf("Chuoi sau khi chinh sua: %s\n", str);
+    return 0;
 }
