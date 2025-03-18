@@ -1,27 +1,20 @@
-﻿#include <stdio.h>
-#include <math.h>
-void main() {
-    int a = 0;
-    int h = 0;
-    int i = 0;
-    double tong = 0;
+﻿#include<stdio.h>
 
-    printf("moi ban nhap chieu dai a : ");
-    scanf_s("%d", &a);
-    printf("moi ban nhap chieu cao h :");
-    scanf_s("%d", &h);
+void main()
+{
+	int A[10];
+	int i = 0;
+	int tong = 0; 
 
-    for (i = 0; i <= 1000; i++)
-    {
-        double x1 = pow((a + i * h), 2);
-        double x2 = pow((a + (i + 1) * h), 2);
-        tong += ((x1 + x2) * h) / 2;
-    }
-    printf("gia tri la: %f", tong);
+	for (i = 0; i < 10; i++)
+	{
+		printf("nhap phan tu thu %d: ",i);
+		scanf_s("%d", &A[i]);
+	}
+	for (i = 0; i < 10; i++)
+	{
+		tong += A[i];
+		
+	}
+	printf("\nTong cac phan tu trong mang: %d",tong);
 }
-
-
-
-
-
-
