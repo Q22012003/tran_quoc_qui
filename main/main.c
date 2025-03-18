@@ -14,17 +14,13 @@ void main()
 	}
 	for (i = 0; i < 10; i++)
 	{
-		if (A[i] > max)
+		if (A[i] < 0)
 		{
-			max = A[i];
+			A[i] = 0;
 		}
 	}
 	for (i = 0; i < 10; i++)
 	{
-		if (A[i] == max)
-		{
-			printf("\n%d vi tri nay la max", i);
-			printf("\n %d la so lon nhat trong mang", A[i]);
-		}
+		printf("\t%d", A[i]);
 	}
 }
