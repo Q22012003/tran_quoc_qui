@@ -10,11 +10,14 @@ printf("nhap chuoi: ");
 gets(str);
 
 while (str[i] != '\0') {
-    if (str[i] == ' ')
+    if (str[i] >='a'&&str[i]<='z')
     {
-        count++;
+        str[i] = str[i] - 32;
     }
     i++;
 }
-printf("so ky tu ' ' %d", count);
+for (i = 0; i < size; i++)
+{
+    printf("%c", str[i]);
+}
 }
