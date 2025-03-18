@@ -4,9 +4,9 @@ void main()
 {
 	int A[10];
 	int i = 0;
-	int tong = 0; 
+	int max = 0; 
 	int n = 0;
-	float trungbinh = 0;
+	
 	for (i = 0; i < 10; i++)
 	{
 		printf("nhap phan tu thu %d: ",i);
@@ -14,12 +14,17 @@ void main()
 	}
 	for (i = 0; i < 10; i++)
 	{
-		if ((A[i] % 2) == 1)
+		if (A[i] > max)
 		{
-			tong = tong + A[i];
-			n++;
+			max = A[i];
 		}
 	}
-	trungbinh = tong / n;
-	printf("\nTrung binh cac phan tu so le trong mang: %f",trungbinh);
+	for (i = 0; i < 10; i++)
+	{
+		if (A[i] == max)
+		{
+			printf("\n%d vi tri nay la max", i);
+			printf("\n %d la so lon nhat trong mang", A[i]);
+		}
+	}
 }
