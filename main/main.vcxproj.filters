@@ -24,12 +24,18 @@
     <ClCompile Include="timchuoi.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Mang.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Add.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="toan.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Mang.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
