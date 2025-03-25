@@ -27,6 +27,9 @@
     <ClCompile Include="Mang.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Stringg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Add.h">
@@ -36,6 +39,9 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Mang.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Stringg.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
