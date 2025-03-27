@@ -6,10 +6,13 @@ struct phan_so {
 };
 typedef struct phan_so phanso;
 
- phanso tinh_phanso(phanso a, phanso b) {
-	phanso tich = { (a.tu * b.tu),(a.mau * b.mau) };
-	return tich;
+phanso chia_2phanso(phanso a, phanso b)
+{
+	phanso chia = { a.tu * b.mau,a.mau * b.tu };
+	return chia;
 }
+
+
 
 
 void main()
@@ -17,12 +20,10 @@ void main()
 	phanso a = { 2,3 };
 	phanso b = { 3,4 };
     
-	phanso tong = tinh_phanso(a, b);
+	phanso chia = chia_2phanso(a, b);
 
-	printf("gia tri tu cua ham la: %d", tong.tu);
-	printf("\ngia tri mau cua ham la: %d", tong.mau);
-
-
+	printf("gia tri tu cua ham: %d", chia.tu);
+	printf("\ngia tri tu cua ham: %d", chia.mau);
 
 	
 	
