@@ -6,27 +6,35 @@ struct phan_so {
 };
 typedef struct phan_so phanso;
 
-phanso tru_2phanso(phanso a, phanso b)
-{
-	int mau = a.mau * b.mau;
-	int tu = (a.tu * b.mau) - (b.tu * a.mau);
-
-	phanso cong = { tu,mau };
-	return cong;
+int ucln(int a, int b) {
+	while(b!=0)
+	{
+		int temp = b;
+		b = a % b;
+		a = temp;
+	}
+	return a;
 }
 
+phanso rutgon_phanso(phanso a)
+{
+	int value = ucln(a.tu, a.mau);
 
-
+	a.tu = a.tu / value;
+	a.mau = a.mau / value;
+	return a;
+	
+}
 
 void main()
 {
 	phanso a = { 2,3 };
 	phanso b = { 3,4 };
     
-	phanso tru = tru_2phanso(a, b);
+	phanso rutgon = rutgon_phanso(a);
 
-	printf("gia tri tu cua ham: %d", tru.tu);
-	printf("\ngia tri tu cua ham: %d", tru.mau);
+	printf("tu: %d", rutgon.tu);
+	printf("\nmau: %d", rutgon.mau);
 
 	
 	
