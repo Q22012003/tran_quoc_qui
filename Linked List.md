@@ -32,6 +32,21 @@
 
 ![Hình ảnh 3](https://lh3.googleusercontent.com/proxy/feMkkFM5Tw8eDB_N1BSbsaaWr-xTj0r58ff_vxbfMIfeduFOIg7e13P1M50MeGkwW7jVZnMqBXVOuUWTDxeWayn_Tx1vWWJvPMzk7Mb-oMVvuTfpovnLIND2AOYG2BDfhtW74SQt2zown8dP)
 
+**Cách để khai báo 1 node**
+
+ struct Node{
+
+ int data // dữ liệu của node
+
+ struct* Node // địa chỉ tiếp theo của node trong danh sách liên kết
+
+ };
+
+ typedef struct Node*listNode;
+
+
+
+
 
 
 
