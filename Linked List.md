@@ -10,6 +10,18 @@
 
 **Nhược điểm**: Tốn bộ nhớ do dùng con trỏ, truy cập phần tử không nhanh bằng mảng.
 
+* __Tính chất__ :
+  
+  1 DSLK có thể thu hẹp hoặc mở rộng 1 cách linh hoạt
+  
+  2 Các phần tử trong DSLK được gọi là NODE
+
+  3 Phần tử cuối cùng trong danh sách liên kết trỏ vào NULL
+
+  4 Không lãng phí bộ nhớ nhưng cần thêm bộ nhớ để lưu phần con trỏ
+
+  5 Đây là dữ liệu được cấp phát động nên khi còn bộ nhớ sẽ thêm vào phần tử trong DSLK
+
 
 
 
