@@ -148,7 +148,7 @@ void Remove(linked_list_t* list) {
 			temp = temp->previous_node;
 		}
 
-		// Giải phóng bộ nhớ của node cuối
+		// Giải phóng bộ nhớ của node cuối//
 		free(temp->previous_node);
 		temp->previous_node = NULL;
 	}
