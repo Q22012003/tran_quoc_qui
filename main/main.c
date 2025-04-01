@@ -166,26 +166,29 @@ void RemoveIndex(linked_list_t* list, int index) {
 		return;
 	}
 
+
+	// ví  dụ cho như sau :  last_node -> 10|0x8 -> 20|0x9 -> 30|0x10 -> NULL
 	// Trường hợp đặc biệt: Xóa node đầu danh sách (tức là `last_node`)
 	if (index == 0) {
-		node_t* temp = list->last_node;
-		list->last_node = list->last_node->previous_node;  // Cập nhật last_node
-		free(temp);  // Giải phóng node cũ
-		list->len--;
+		node_t* temp = list->last_node;  // lưu temp thành 10|0x8 
+		list->last_node = list->last_node->previous_node;  // Cập nhật last_node bằng cho trỏ tới địa chỉ của 20 
+		free(temp);  // Giải phóng node cũ bằng cách giải phóng biến temp 
+		list->len--; // giảm độ dài 
 		return;
 	}
 
 	// Duyệt danh sách để tìm node trước node cần xóa
-	node_t* temp = list->last_node;
-	for (int i = 0; i < index - 1; i++) {
+	//  last_node -> 10|0x8 -> 20|0x9 -> 30|0x10 -> NULL
+	node_t* temp = list->last_node; // lưu biến temp thành 10|0x8
+	for (int i = 0; i < index - 1; i++) {  // ví dụ nhập index = 2 lúc này biến temp sẽ được lưu thành 20|0x8
 		temp = temp->previous_node;
 	}
 
 	// Node cần xóa là `temp->previous_node`
-	node_t* node_to_delete = temp->previous_node;
-	temp->previous_node = node_to_delete->previous_node;  // Bỏ qua node bị xóa
+	node_t* node_to_delete = temp->previous_node; // node to delete được lưu thành 30|0x10
+	temp->previous_node = node_to_delete->previous_node;  // temp đang lưu 20|0x9 trỏ đến giá trị NULL vì do node to delete đang lưu 30|0x10 trỏ đến NULL
 
-	free(node_to_delete);  // Giải phóng bộ nhớ
+	free(node_to_delete);  // Giải phóng bộ nhớ 30|0x10
 	list->len--;
 }
 
