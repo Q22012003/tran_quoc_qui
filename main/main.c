@@ -223,6 +223,24 @@ void RemoveIndex(linked_list_t* list, int index)
 	}
 
 
+	//
+	int Search(linked_list_t * list, int value) {
+		node_t* temp = list->last_node;  // Bắt đầu từ last_node
+		int index = 0;  // Vị trí bắt đầu là 0
+
+		while (temp != NULL) {
+			if (temp->data == value) {  // Nếu tìm thấy giá trị
+				return index;
+			}
+			temp = temp->previous_node;  // Di chuyển đến node trước đó
+			index++;  // Tăng vị trí lên
+		}
+
+		return -1;  // Không tìm thấy giá trị
+	}
+
+
+
 }
 int main()
 {
