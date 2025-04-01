@@ -192,39 +192,13 @@ void RemoveIndex(linked_list_t* list, int index) {
 	list->len--;
 }
 
-void RemoveIndex(linked_list_t* list, int index)
-{
-	//kiểm tra index có hợp lệ hay không
-	if (index<0 || index>list->len)
-	{
-		printf("khong hop le!!!!");
-	}
-	//Trường hợp đặc biệt : Xóa đầu danh sách ( tức là last node)
-	if (index == 0) {
-		node_t* temp = list->last_node;
-		list->last_node = list->last_node->previous_node;  // Cập nhật last_node
-		free(temp);  // Giải phóng node cũ
-		list->len--;
-		return;
 
-		// Duyệt danh sách để tìm node trước node cần xóa
-		node_t* temp = list->last_node;
-		for (int i = 0; i < index - 1; i++) {
-			temp = temp->previous_node;
-		}
-
-		// Node cần xóa là `temp->previous_node`
-		node_t* node_to_delete = temp->previous_node;
-		temp->previous_node = node_to_delete->previous_node;  // Bỏ qua node bị xóa
-
-		free(node_to_delete);  // Giải phóng bộ nhớ
-		list->len--;
-
-	}
-
-
-	//
-	int Search(linked_list_t * list, int value) {
+//Search: tìm kiếm vị trí của node theo giá trị
+//- Input :
+//*linked_list_t * : địa chỉ của linked líst mà chúng ta cần tìm kiếm
+//* int value : giá trị của node mà chúng ta muốn tìm kiếm
+//- Ouput : int : vị trí của node được tìm thấy, -1 nếu không tìm thấy bất kỳ node vào có giá trị value.
+int Search(linked_list_t * list, int value) {
 		node_t* temp = list->last_node;  // Bắt đầu từ last_node
 		int index = 0;  // Vị trí bắt đầu là 0
 
@@ -239,9 +213,62 @@ void RemoveIndex(linked_list_t* list, int index)
 		return -1;  // Không tìm thấy giá trị
 	}
 
+//GetValue: lấy giá trị của node ở vị trí cuối cùng
+//- Input:
+//	*linked_list_t * : địa chỉ của linked list cái mà chúng ta sẽ đi đọc node trong đó.
+//	- Ouput : int : giá trị của node
+int GetValue(linked_list_t* list) {
+		if (list->last_node == NULL) {
+			printf("Danh sách liên kết rỗng!\n");
+			return -1;  // Hoặc có thể chọn một giá trị báo lỗi khác
+		}
+		return list->last_node->value;
+	}
 
+//GetValueIndex: lấy giá trị của node ở vị trí index
+//- Input :
+//	*linked_list_t * : địa của của linked list cái mà chúng ta sẽ đi đọc giá trị của node ở vị trí index
+//* int index : vị trí của node chúng ta muốn đọc
+//	- Ouput : int : giá trị của node mà chúng ta đọc được
+int GetValueIndex(linked_list_t* list, int index) {
+	if (list->last_node == NULL) {
+		printf("Danh sách liên kết rỗng!\n");
+		return -1;
+	}
+	if (index < 0 || index >= list->len) {
+		printf("Index không hợp lệ!\n");
+		return -1;
+	}
 
+	// Duyệt đến vị trí cần lấy giá trị
+	node_t* temp = list->last_node;
+	for (int i = 0; i < index; i++) {
+		temp = temp->previous_node;
+	}
+
+	return temp->value;
 }
+
+//DeleteAll: xoá tất cả node trong linked lisst
+//- Input : linked_list_t * : địa chỉ của linked list cái mà chúng ta muốn xoá hết tất cả node của nos
+//- Output : void
+void DeleteAll(linked_list_t* list) {
+	node_t* temp = list->last_node;
+
+	while (temp != NULL) {
+		node_t* prev = temp->previous_node; // Lưu node trước
+		free(temp); // Giải phóng node hiện tại
+		temp = prev; // Di chuyển đến node tiếp theo
+	}
+
+	// Cập nhật danh sách sau khi xóa hết
+	list->last_node = NULL;
+	list->len = 0;
+}
+
+
+
+
 int main()
 {
 	linked_list_t listt;
