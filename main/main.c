@@ -1,24 +1,38 @@
-﻿#include<stdio.h>
+﻿#include<Stdio.h>
 
 
-typedef union {
-	unsigned short x;
-	unsigned char y[2];
-}union_t;
+// tao ra kieu du lieu con tro ham  - con tro ham dung de chua dia chi cua ham co output :float , input :float
 
-void main()
+typedef float (*function_pointer_t)(float);
+float fx(float x)
 {
-	unsigned short val = 0x1234;
-	unsigned char low = 0x34;
-	unsigned char high = 0x12;
+	return x * x;
+}
+float gx(float x)
+{
+	return 2 * x * x + 3 * x + 1;
+}
+float tx(float x)
+{
+	return sin(x) + 1;
+}
+float tinhtichphan(int a, int b,function_pointer_t pfunc)
+{
+	float h = (b - a) / 1000.0f;
+	float s = 0;
+	for (int i = 0; i < 1000; i++)
+	{
+		float db = fx(a + i * h);
+		float dl = fx(a + (i + 1) * h);
+		s += ((dl + db) / 2 * h);
+	}
+	return s;
+}
 
-	union_t sv;
-	sv.x = val;
-	high=sv.
-	sv.y_low = low;
 
-	printf("0x%s", sv.y_high);
-	printf("\n0x%s", sv.y_low);
-
-
+void main() {
+	
+	tinhtichphan(1, 2, gx);
+	
+	
 }
