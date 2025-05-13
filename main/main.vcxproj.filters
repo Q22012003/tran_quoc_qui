@@ -15,33 +15,18 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="toan.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="timchuoi.c">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Mang.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Stringg.c">
+    <ClCompile Include="Library.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Add.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="toan.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Mang.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Stringg.h">
+    <ClInclude Include="Library.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
