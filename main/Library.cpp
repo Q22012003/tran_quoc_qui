@@ -1,5 +1,5 @@
 #include "Library.h"
-/*
+
 int formula_euclid(int a, int b)
 {
 	while (b != 0)
@@ -173,7 +173,7 @@ int phan_so::bang(phan_so chinh_no, phan_so khac)
 	}
 
 }
-*/
+
 
 
 

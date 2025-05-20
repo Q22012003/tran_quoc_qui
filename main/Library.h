@@ -1,6 +1,8 @@
 #pragma once
 #include<iostream>
-/*
+
+
+
 int formula_euclid(int a, int b);
 class phan_so
 {
@@ -18,7 +20,7 @@ public:
 	phan_so sosanhbehonbang(phan_so chinh_no, phan_so khac);
 	int bang(phan_so chinh_no, phan_so khac);
 	
-};*/
+};
 
 class arr {
 public:
